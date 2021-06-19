@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 import Ninjas from './Ninjas'
 import AddNinja from './AddNinja'
@@ -15,6 +15,9 @@ function App() {
     setninjas(arry)
   }
 
+  useEffect(() => {    
+    console.log('state changes');
+  }, [ninjas])
   
   return (
     <div className="App">

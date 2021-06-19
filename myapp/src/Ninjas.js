@@ -4,7 +4,7 @@ export default function Ninjas(props) {
     let  { list } = props;
     const [listData, setlistData] = useState(list)
     const itemDelete = (index) => {
-        list = listData.filter((item, ind) => ind != index);
+        list = listData.filter((item, ind) => ind !== index);
         setlistData(list);
     
     }
