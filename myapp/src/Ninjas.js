@@ -4,9 +4,9 @@ export default function Ninjas(props) {
     const { list } = props;
     const ListNinjas = list.map((item,i) =>{
         return (<div key={i} className="listitem">
-            <div>name:{list.name}</div>
-            <div>age:20</div>
-            <div>Belt:)</div>
+            <div>name:{item.name}</div>
+            <div>age:{item.age}</div>
+            <div>Belt:{item.path}</div>
             <hr />
         </div>)
     })
