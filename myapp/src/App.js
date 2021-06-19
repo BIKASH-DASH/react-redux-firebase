@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import './App.css';
 import Ninjas from './Ninjas'
 import AddNinja from './AddNinja'
-import _ from 'lodash'
+
 
 function App() {
   const [ninjas, setninjas] = useState([
