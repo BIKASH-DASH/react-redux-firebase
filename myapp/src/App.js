@@ -2,29 +2,24 @@ import React, { useState, useEffect} from 'react';
 import './App.css';
 import Ninjas from './Ninjas'
 import AddNinja from './AddNinja'
-
-
+import Navbar from './components/layout/Navbar'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Dashboard from './components/dashboard/Dashboard'
 function App() {
-  const [ninjas, setninjas] = useState([
-    { name: 'viaksh', age: '22', path: 'red' },
-    { name: 'raja', age: '21', path: 'green' },
-    { name: 'bikash', age: '25', path: 'yellow' }
-  ])
-  const hendelFormData = (data) =>{
-    let arry =[...ninjas,data];
-    setninjas(arry)
-  }
 
-  useEffect(() => {    
-    console.log('state changes');
-  }, [ninjas])
-  
   return (
-    <div className="App">
-      <h1>App</h1>
-      <Ninjas list={ninjas} />
-      <AddNinja formdata={hendelFormData}/>
-    </div>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/" component={Dashboard}></Route>
+        <Route path="/dashboard" component={Dashboard}></Route>
+      </Switch>
+    </Router>
   );
 }
 
