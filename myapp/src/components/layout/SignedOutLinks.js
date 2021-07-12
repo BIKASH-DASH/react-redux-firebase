@@ -5,7 +5,8 @@ export default function SignoutLinks() {
     return (
 
         <ul className="right">
-            <li><NavLink to="/"></NavLink></li>
+            <li><NavLink to="/signup">SignUp</NavLink></li>
+            <li><NavLink to="/signin">Login</NavLink></li>
         </ul>
 
     )
