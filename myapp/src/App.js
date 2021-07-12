@@ -10,14 +10,19 @@ import {
   Link
 } from "react-router-dom";
 import Dashboard from './components/dashboard/Dashboard'
+import ProjectDetails from './components/Project/ProjectDetails'
+import SignIn from './components/auth/SignIn'
 function App() {
 
   return (
     <Router>
       <Navbar/>
       <Switch>
-        <Route path="/" component={Dashboard}></Route>
-        <Route path="/dashboard" component={Dashboard}></Route>
+        <Route exact path="/signin" component={SignIn} >SignIn</Route>
+        <Route path="/projectdetails/:id" component={ProjectDetails}></Route>
+        <Route exact path="/dashboard" component={Dashboard}></Route>
+        <Route exact path="/" component={Dashboard}></Route>
+        
       </Switch>
     </Router>
   );
