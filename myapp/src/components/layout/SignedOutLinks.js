@@ -4,9 +4,9 @@ import {NavLink} from "react-router-dom";
 export default function SignoutLinks() {
     return (
 
-        <ui className="right">
+        <ul className="right">
             <li><NavLink to="/"></NavLink></li>
-        </ui>
+        </ul>
 
     )
 }

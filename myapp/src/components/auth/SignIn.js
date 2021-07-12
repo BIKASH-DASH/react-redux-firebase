@@ -5,19 +5,27 @@ export default class SignIn extends Component {
             email: '',
             password: ''
     }
-    hendelSubmit = ()=>{}
+    hendelChanges = (e) =>{
+        this.setState({
+            [e.target.id] :e.target.value
+        })
+    }
+    hendelSubmit = (e)=>{
+        e.preventDefault();
+        console.log(this.state);
+    }
     render() {
         return (
             <div className="container ">
-                <form onSubmit={hendelSubmit()} action="" className="white">
-                    <h5 className="gray-text text-darken-3">Sign In s</h5>
+                <form onSubmit={this.hendelSubmit} action="" className="white">
+                    <h5 className="gray-text text-darken-3">Sign In</h5>
                     <div className="input-Field">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={(e) => this.state.email}/>
+                        <input type="email" id="email" onChange={this.hendelChanges}/>
                     </div>
                     <div className="input-Field">
                         <label htmlFor="email">Password</label>
-                        <input type="password" id="password" onChange={(e) => this.state.password} />
+                        <input type="password" id="password" onChange={this.hendelChanges} />
                     </div>
 
                     <div className="input-Field">
