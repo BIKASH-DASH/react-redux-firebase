@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
-export default class CreateProject extends Component {
+import {connect} from 'react-redux'
+import { createProject} from '../../store/actions/projectActions'
+class CreateProject extends Component {
     state = {
         title: '',
         description: ''
@@ -12,7 +13,7 @@ export default class CreateProject extends Component {
     }
     hendelSubmit = (e) =>{
         e.preventDefault();
-        console.log(this.state);
+        this.props.createProject(this.state)
     }
 
     render() {
@@ -28,10 +29,17 @@ export default class CreateProject extends Component {
                         <label htmlFor="description">Description</label>
                         <textarea id="description" onChange={this.hendelChanges} cols="50" rows="20"></textarea>
                     </div>
-                    <button className="pink text-lighten">Submit</button>
+                    <button type="submit" className="button pink text-lighten">Submit</button>
                 </form>
                 
             </div>
         )
     }
 }
+const mapDispatchProps = (dispatch)=>{
+    return {
+        createProject:(project)=>dispatch(createProject(project))
+    }
+}
+
+export default connect(null, mapDispatchProps)(CreateProject);
