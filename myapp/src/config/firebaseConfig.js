@@ -8,10 +8,11 @@ const firebaseConfig = {
     projectId: "net-ninja-63961",
     storageBucket: "net-ninja-63961.appspot.com",
     messagingSenderId: "634777698615",
-    appId: "1:634777698615:web:b25f5afaabcefdbe935ab2",
-    measurementId: "G-ZGY1LVWRHJ"
+    appId: "1:634777698615:web:53b643e52613fa43935ab2",
+    measurementId: "G-175V1YEET5"
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.firestore.settings({timestampsInSnapshots: true})
+firebase.firestore().settings({ timestampsInSnapshots: true });
+
 export default firebase;
